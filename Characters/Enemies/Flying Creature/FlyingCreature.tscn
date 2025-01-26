@@ -1,10 +1,10 @@
-[gd_scene load_steps=22 format=3 uid="uid://e6hrtln6o6gf"]
+[gd_scene load_steps=26 format=3 uid="uid://e6hrtln6o6gf"]
 
 [ext_resource type="PackedScene" uid="uid://dkpis7w2h85hp" path="res://Characters/Enemies/Enemy.tscn" id="1"]
-[ext_resource type="Texture2D" uid="uid://d0bfixe0mujtg" path="res://Art/v1.1 dungeon crawler 16x16 pixel pack/enemies/flying creature/fly_anim_spritesheet.png" id="2"]
 [ext_resource type="Script" path="res://Characters/Enemies/Flying Creature/FlyingCreatureFSM.gd" id="3"]
 [ext_resource type="Texture2D" uid="uid://5s650l0opflc" path="res://Art/v1.1 dungeon crawler 16x16 pixel pack/effects (new)/enemy_afterdead_explosion_anim_spritesheet.png" id="4"]
 [ext_resource type="Script" path="res://Characters/Hitbox.gd" id="5"]
+[ext_resource type="Texture2D" uid="uid://ee1566af5nmu" path="res://Art/v1.1 dungeon crawler 16x16 pixel pack/enemies/flying creature/mob monster2 melee.png" id="5_epx00"]
 [ext_resource type="Script" path="res://Characters/Enemies/Flying Creature/FlyingCreature.gd" id="6"]
 
 [sub_resource type="AtlasTexture" id="5"]
@@ -23,21 +23,37 @@ region = Rect2(32, 0, 16, 16)
 atlas = ExtResource("4")
 region = Rect2(48, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="1"]
-atlas = ExtResource("2")
-region = Rect2(0, 0, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_dvlht"]
+atlas = ExtResource("5_epx00")
+region = Rect2(0, 0, 128, 128)
 
-[sub_resource type="AtlasTexture" id="2"]
-atlas = ExtResource("2")
-region = Rect2(16, 0, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_e2r3l"]
+atlas = ExtResource("5_epx00")
+region = Rect2(128, 0, 128, 128)
 
-[sub_resource type="AtlasTexture" id="3"]
-atlas = ExtResource("2")
-region = Rect2(32, 0, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_thj0u"]
+atlas = ExtResource("5_epx00")
+region = Rect2(256, 0, 128, 128)
 
-[sub_resource type="AtlasTexture" id="4"]
-atlas = ExtResource("2")
-region = Rect2(48, 0, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4uos"]
+atlas = ExtResource("5_epx00")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ek7qg"]
+atlas = ExtResource("5_epx00")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ed3lf"]
+atlas = ExtResource("5_epx00")
+region = Rect2(256, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xr407"]
+atlas = ExtResource("5_epx00")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e1o2c"]
+atlas = ExtResource("5_epx00")
+region = Rect2(128, 256, 128, 128)
 
 [sub_resource type="SpriteFrames" id="9"]
 animations = [{
@@ -60,16 +76,28 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("1")
+"texture": SubResource("AtlasTexture_dvlht")
 }, {
 "duration": 1.0,
-"texture": SubResource("2")
+"texture": SubResource("AtlasTexture_e2r3l")
 }, {
 "duration": 1.0,
-"texture": SubResource("3")
+"texture": SubResource("AtlasTexture_thj0u")
 }, {
 "duration": 1.0,
-"texture": SubResource("4")
+"texture": SubResource("AtlasTexture_v4uos")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ek7qg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ed3lf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xr407")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e1o2c")
 }],
 "loop": true,
 "name": &"default",
@@ -241,6 +269,7 @@ flying = true
 script = ExtResource("3")
 
 [node name="AnimatedSprite2D" parent="." index="1"]
+scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("9")
 frame = 1
 
@@ -262,3 +291,11 @@ disabled = true
 libraries = {
 "": SubResource("AnimationLibrary_e8el5")
 }
+
+[node name="TextEdit" type="TextEdit" parent="." index="7"]
+offset_left = -10.0
+offset_top = -27.0
+offset_right = 68.0
+offset_bottom = 1.0
+scale = Vector2(0.3, 0.3)
+text = "Aselole"

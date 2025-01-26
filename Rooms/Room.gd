@@ -46,7 +46,7 @@ func _spawn_enemies() -> void:
 		var enemy: CharacterBody2D
 		if boss_room:
 			enemy = ENEMY_SCENES.SLIME_BOSS.instantiate()
-			num_enemies = 15
+			num_enemies = 10
 		else:
 			if randi() % 2 == 0:
 				enemy = ENEMY_SCENES.FLYING_CREATURE.instantiate()

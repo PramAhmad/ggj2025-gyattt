@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://bw066vms5rf1j"]
+[gd_scene load_steps=13 format=3 uid="uid://bw066vms5rf1j"]
 
 [ext_resource type="PackedScene" uid="uid://jvc34qam0obx" path="res://Weapons/Weapon.tscn" id="1"]
-[ext_resource type="Texture2D" uid="uid://s5t2yqaddhot" path="res://Art/Hammer.png" id="2"]
 [ext_resource type="Shader" path="res://Characters/Player/White.gdshader" id="3"]
+[ext_resource type="Texture2D" uid="uid://cnssqtabbjrdm" path="res://Art/v1.1 dungeon crawler 16x16 pixel pack/heroes/knight/stick.png" id="3_i0yr3"]
+[ext_resource type="AudioStream" uid="uid://dy04tupayb32h" path="res://Art/Sword.mp3" id="4_bg4cr"]
 
 [sub_resource type="ShaderMaterial" id="3"]
 resource_local_to_scene = true
@@ -255,7 +256,8 @@ _data = {
 [node name="Sprite2D" parent="Node2D" index="0"]
 material = SubResource("3")
 position = Vector2(7, 4.17233e-07)
-texture = ExtResource("2")
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_i0yr3")
 
 [node name="Hitbox" parent="Node2D/Sprite2D" index="0"]
 damage = 2
@@ -276,3 +278,6 @@ shape = SubResource("2")
 libraries = {
 "": SubResource("AnimationLibrary_k46tl")
 }
+
+[node name="hit" type="AudioStreamPlayer" parent="." index="5"]
+stream = ExtResource("4_bg4cr")

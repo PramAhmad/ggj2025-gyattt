@@ -28,7 +28,7 @@ func _on_body_entered(body: Node2D) -> void:
 	while body_inside:
 		_collide(body)
 		await timer.timeout
-
+	
 
 func _on_body_exited(_body: Node2D) -> void:
 	body_inside = false

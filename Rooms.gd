@@ -7,9 +7,9 @@ const END_ROOMS: Array = [preload("res://Rooms/EndRoom0.tscn")]
 const SLIME_BOSS_SCENE: PackedScene = preload("res://Rooms/SlimeBossRoom.tscn")
 
 const TILE_SIZE: int = 16
-const FLOOR_TILE_INDEX: int = 8
-const RIGHT_WALL_TILE_INDEX: int = 57
-const LEFT_WALL_TILE_INDEX: int = 6
+const FLOOR_TILE_INDEX: int = 5
+const RIGHT_WALL_TILE_INDEX: int = 46
+const LEFT_WALL_TILE_INDEX: int = 45
 
 @export var num_levels: int = 5
 
@@ -39,6 +39,8 @@ func _spawn_rooms() -> void:
 			else:
 				if SavedData.num_floor == 3:
 					room = SLIME_BOSS_SCENE.instantiate()
+					room.boss_room = true
+					
 				else:
 					if (randi() % 3 == 0 and not special_room_spawned) or (i == num_levels - 2 and not special_room_spawned):
 						room = SPECIAL_ROOMS[randi() % SPECIAL_ROOMS.size()].instantiate()
@@ -58,6 +60,7 @@ func _spawn_rooms() -> void:
 				previous_room_tilemap.set_cell(0, exit_tile_pos + Vector2i(1, -y), RIGHT_WALL_TILE_INDEX, Vector2i.ZERO)
 
 			var room_tilemap: TileMap = room.get_node("TileMap")
+			print(room.position)
 			room.position = previous_room_door.global_position + Vector2.UP * room_tilemap.get_used_rect().size.y * TILE_SIZE + Vector2.UP * (1 + corridor_height) * TILE_SIZE + Vector2.LEFT * room_tilemap.local_to_map(room.get_node("Entrance/Position2D2").position).x * TILE_SIZE
 			print(room.position)
 		add_child(room)

@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://bn6jjdha1ecvj"]
+[gd_scene load_steps=15 format=3 uid="uid://bn6jjdha1ecvj"]
 
 [ext_resource type="PackedScene" uid="uid://jvc34qam0obx" path="res://Weapons/Weapon.tscn" id="1"]
-[ext_resource type="Texture2D" uid="uid://evihltxw1ud3" path="res://Art/v1.1 dungeon crawler 16x16 pixel pack/effects (new)/slash_effect_anim_spritesheet.png" id="2"]
-[ext_resource type="Texture2D" uid="uid://dfnyu2au1agfw" path="res://Art/v1.1 dungeon crawler 16x16 pixel pack/heroes/knight/weapon_sword_1.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://cnssqtabbjrdm" path="res://Art/v1.1 dungeon crawler 16x16 pixel pack/heroes/knight/stick.png" id="3_qq4fw"]
 [ext_resource type="Shader" path="res://Characters/Player/White.gdshader" id="4"]
+[ext_resource type="AudioStream" uid="uid://dy04tupayb32h" path="res://Art/Sword.mp3" id="4_efcgm"]
+[ext_resource type="Texture2D" uid="uid://b1b8fauqa2tul" path="res://Art/Bubble Effect.png" id="4_mcyla"]
 [ext_resource type="Texture2D" uid="uid://d1e3hlbucgbfq" path="res://Art/19+ icons/swingB.png" id="6"]
 
 [sub_resource type="ShaderMaterial" id="6"]
@@ -502,30 +503,41 @@ _data = {
 }
 
 [node name="Sword" instance=ExtResource("1")]
+metadata/_edit_horizontal_guides_ = [-16.0]
 
 [node name="Sprite2D" parent="Node2D" index="0"]
 material = SubResource("6")
-position = Vector2(7, 3)
-texture = ExtResource("3")
+position = Vector2(7.99995, 13)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_qq4fw")
+flip_v = true
 
 [node name="Hitbox" parent="Node2D/Sprite2D" index="0"]
+position = Vector2(24.8604, 19.5438)
+rotation = -0.438389
+scale = Vector2(8.31352, -17.4556)
 knockback_force = 200
 
 [node name="CollisionShape2D" parent="Node2D/Sprite2D/Hitbox" index="0"]
+position = Vector2(-0.611763, 1.12569)
 scale = Vector2(1, 4)
 shape = SubResource("1")
 
 [node name="ChargeParticles" parent="Node2D/Sprite2D" index="1"]
-position = Vector2(5.65685, -4.24264)
+position = Vector2(30.0097, 24.9327)
+rotation = 0.341378
 
 [node name="SlashSprite" type="Sprite2D" parent="." index="1"]
 visible = false
 position = Vector2(26, 0)
-scale = Vector2(2, 2)
-texture = ExtResource("2")
-hframes = 3
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_mcyla")
 
-[node name="AnimationPlayer" parent="." index="3"]
+[node name="hit" type="AudioStreamPlayer" parent="." index="2"]
+stream = ExtResource("4_efcgm")
+volume_db = 1.0
+
+[node name="AnimationPlayer" parent="." index="4"]
 libraries = {
 "": SubResource("AnimationLibrary_ypj85")
 }

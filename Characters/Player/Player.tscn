@@ -1,145 +1,216 @@
-[gd_scene load_steps=31 format=3 uid="uid://dftvfv1jceskv"]
+[gd_scene load_steps=47 format=3 uid="uid://dftvfv1jceskv"]
 
 [ext_resource type="PackedScene" uid="uid://bheousdjxqa14" path="res://Characters/Character.tscn" id="1"]
-[ext_resource type="Texture2D" uid="uid://kfcieplqn3ap" path="res://Art/v1.1 dungeon crawler 16x16 pixel pack/heroes/knight/knight_idle_spritesheet.png" id="2"]
-[ext_resource type="Texture2D" uid="uid://beuxbt1hqtnxl" path="res://Art/v1.1 dungeon crawler 16x16 pixel pack/heroes/knight/knight_run_spritesheet.png" id="3"]
 [ext_resource type="Script" path="res://Characters/Player/Player.gd" id="4"]
+[ext_resource type="Texture2D" uid="uid://wwxc4o7fyqfp" path="res://Art/bubble splash .png" id="4_du88f"]
 [ext_resource type="Script" path="res://Characters/Player/PlayerFSM.gd" id="5"]
+[ext_resource type="Texture2D" uid="uid://wfm4q8ll4cks" path="res://Art/v1.1 dungeon crawler 16x16 pixel pack/heroes/knight/Bubble Aura Idle/a.png" id="5_1o05i"]
 [ext_resource type="PackedScene" uid="uid://bn6jjdha1ecvj" path="res://Weapons/Sword.tscn" id="6"]
-[ext_resource type="Texture2D" uid="uid://5s650l0opflc" path="res://Art/v1.1 dungeon crawler 16x16 pixel pack/effects (new)/enemy_afterdead_explosion_anim_spritesheet.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://rti1f58a03o0" path="res://Art/v1.1 dungeon crawler 16x16 pixel pack/heroes/knight/Bubble Aura Idle/b.png" id="6_gtvdi"]
+[ext_resource type="Texture2D" uid="uid://dpf0ryew5xpdv" path="res://Art/v1.1 dungeon crawler 16x16 pixel pack/heroes/knight/Bubble Aura Idle/c.png" id="7_n7x0n"]
+[ext_resource type="Texture2D" uid="uid://be1hfgiriuhjf" path="res://Art/v1.1 dungeon crawler 16x16 pixel pack/heroes/knight/Bubble Aura Idle/d.png" id="8_y7wci"]
+[ext_resource type="Texture2D" uid="uid://wejvrjm85s2t" path="res://Art/v1.1 dungeon crawler 16x16 pixel pack/heroes/knight/Bubble Aura Idle/e.png" id="9_nb40m"]
+[ext_resource type="Texture2D" uid="uid://coohv1qjpbb5h" path="res://Art/v1.1 dungeon crawler 16x16 pixel pack/heroes/knight/Bubble Aura Idle/f.png" id="10_7isny"]
+[ext_resource type="Texture2D" uid="uid://dobxxfutt8nf2" path="res://Art/v1.1 dungeon crawler 16x16 pixel pack/heroes/knight/Bubble Aura Idle/g.png" id="11_glyc8"]
+[ext_resource type="Texture2D" uid="uid://bxgkx1ho5sft5" path="res://Art/v1.1 dungeon crawler 16x16 pixel pack/heroes/knight/Bubble Aura Idle/h.png" id="12_ixiew"]
+[ext_resource type="Texture2D" uid="uid://bq5jou5m1a66j" path="res://Art/v1.1 dungeon crawler 16x16 pixel pack/heroes/knight/Run Buble/b1.png" id="13_sgda3"]
+[ext_resource type="Texture2D" uid="uid://dd53yp06mbtun" path="res://Art/v1.1 dungeon crawler 16x16 pixel pack/heroes/knight/Run Buble/b2.png" id="14_e8lwi"]
+[ext_resource type="Texture2D" uid="uid://dxhlpvsxrwypp" path="res://Art/v1.1 dungeon crawler 16x16 pixel pack/heroes/knight/Run Buble/b3.png" id="15_5jql2"]
+[ext_resource type="Texture2D" uid="uid://b1j05tsyc4du6" path="res://Art/v1.1 dungeon crawler 16x16 pixel pack/heroes/knight/Run Buble/b4.png" id="16_c7pb5"]
+[ext_resource type="Texture2D" uid="uid://5nbw62nbumwe" path="res://Art/v1.1 dungeon crawler 16x16 pixel pack/heroes/knight/Run Buble/b5.png" id="17_xne5f"]
+[ext_resource type="Texture2D" uid="uid://bq6kk0t5i2ihk" path="res://Art/v1.1 dungeon crawler 16x16 pixel pack/heroes/knight/Run Buble/b6.png" id="18_4ileg"]
+[ext_resource type="Texture2D" uid="uid://dgkr18d77e0j5" path="res://Art/v1.1 dungeon crawler 16x16 pixel pack/heroes/knight/Run Buble/b7.png" id="19_bgwr3"]
+[ext_resource type="Texture2D" uid="uid://ch7jg5bdahk2x" path="res://Art/v1.1 dungeon crawler 16x16 pixel pack/heroes/knight/Run Buble/b8.png" id="20_63rxf"]
+[ext_resource type="AudioStream" uid="uid://dy04tupayb32h" path="res://Art/Sword.mp3" id="22_b6vl3"]
 
-[sub_resource type="AtlasTexture" id="13"]
-atlas = ExtResource("9")
-region = Rect2(0, 0, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_fomia"]
+atlas = ExtResource("4_du88f")
+region = Rect2(0, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="14"]
-atlas = ExtResource("9")
-region = Rect2(16, 0, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_carag"]
+atlas = ExtResource("4_du88f")
+region = Rect2(64, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="15"]
-atlas = ExtResource("9")
-region = Rect2(32, 0, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6f5q"]
+atlas = ExtResource("4_du88f")
+region = Rect2(128, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="16"]
-atlas = ExtResource("9")
-region = Rect2(48, 0, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_dplrk"]
+atlas = ExtResource("4_du88f")
+region = Rect2(192, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="1"]
-atlas = ExtResource("2")
-region = Rect2(0, 0, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ct56o"]
+atlas = ExtResource("4_du88f")
+region = Rect2(256, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="2"]
-atlas = ExtResource("2")
-region = Rect2(16, 0, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_6kv38"]
+atlas = ExtResource("4_du88f")
+region = Rect2(0, 64, 64, 64)
 
-[sub_resource type="AtlasTexture" id="3"]
-atlas = ExtResource("2")
-region = Rect2(32, 0, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_pq6bt"]
+atlas = ExtResource("4_du88f")
+region = Rect2(64, 64, 64, 64)
 
-[sub_resource type="AtlasTexture" id="4"]
-atlas = ExtResource("2")
-region = Rect2(48, 0, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vact"]
+atlas = ExtResource("4_du88f")
+region = Rect2(128, 64, 64, 64)
 
-[sub_resource type="AtlasTexture" id="5"]
-atlas = ExtResource("2")
-region = Rect2(64, 0, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_m83cw"]
+atlas = ExtResource("4_du88f")
+region = Rect2(192, 64, 64, 64)
 
-[sub_resource type="AtlasTexture" id="6"]
-atlas = ExtResource("2")
-region = Rect2(80, 0, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_4onh5"]
+atlas = ExtResource("4_du88f")
+region = Rect2(256, 64, 64, 64)
 
-[sub_resource type="AtlasTexture" id="7"]
-atlas = ExtResource("3")
-region = Rect2(0, 0, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_j0jok"]
+atlas = ExtResource("4_du88f")
+region = Rect2(0, 128, 64, 64)
 
-[sub_resource type="AtlasTexture" id="8"]
-atlas = ExtResource("3")
-region = Rect2(16, 0, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_wtl4n"]
+atlas = ExtResource("4_du88f")
+region = Rect2(64, 128, 64, 64)
 
-[sub_resource type="AtlasTexture" id="9"]
-atlas = ExtResource("3")
-region = Rect2(32, 0, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ovou"]
+atlas = ExtResource("4_du88f")
+region = Rect2(128, 128, 64, 64)
 
-[sub_resource type="AtlasTexture" id="10"]
-atlas = ExtResource("3")
-region = Rect2(48, 0, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_oyu84"]
+atlas = ExtResource("4_du88f")
+region = Rect2(192, 128, 64, 64)
 
-[sub_resource type="AtlasTexture" id="11"]
-atlas = ExtResource("3")
-region = Rect2(64, 0, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_0rsjn"]
+atlas = ExtResource("4_du88f")
+region = Rect2(256, 128, 64, 64)
 
-[sub_resource type="AtlasTexture" id="12"]
-atlas = ExtResource("3")
-region = Rect2(80, 0, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_xn18l"]
+atlas = ExtResource("4_du88f")
+region = Rect2(0, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8vqkh"]
+atlas = ExtResource("4_du88f")
+region = Rect2(64, 192, 64, 64)
 
 [sub_resource type="SpriteFrames" id="17"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("13")
+"texture": SubResource("AtlasTexture_fomia")
 }, {
 "duration": 1.0,
-"texture": SubResource("14")
+"texture": SubResource("AtlasTexture_carag")
 }, {
 "duration": 1.0,
-"texture": SubResource("15")
+"texture": SubResource("AtlasTexture_r6f5q")
 }, {
 "duration": 1.0,
-"texture": SubResource("16")
+"texture": SubResource("AtlasTexture_dplrk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ct56o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6kv38")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pq6bt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6vact")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m83cw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4onh5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j0jok")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wtl4n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ovou")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oyu84")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0rsjn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xn18l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8vqkh")
 }],
 "loop": true,
 "name": &"dead",
-"speed": 5.0
+"speed": 17.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("1")
+"texture": ExtResource("5_1o05i")
 }, {
 "duration": 1.0,
-"texture": SubResource("2")
+"texture": ExtResource("6_gtvdi")
 }, {
 "duration": 1.0,
-"texture": SubResource("3")
+"texture": ExtResource("7_n7x0n")
 }, {
 "duration": 1.0,
-"texture": SubResource("4")
+"texture": ExtResource("8_y7wci")
 }, {
 "duration": 1.0,
-"texture": SubResource("5")
+"texture": ExtResource("9_nb40m")
 }, {
 "duration": 1.0,
-"texture": SubResource("6")
+"texture": ExtResource("10_7isny")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_glyc8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ixiew")
 }],
 "loop": true,
 "name": &"idle",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("7")
+"texture": ExtResource("13_sgda3")
 }, {
 "duration": 1.0,
-"texture": SubResource("8")
+"texture": ExtResource("14_e8lwi")
 }, {
 "duration": 1.0,
-"texture": SubResource("9")
+"texture": ExtResource("15_5jql2")
 }, {
 "duration": 1.0,
-"texture": SubResource("10")
+"texture": ExtResource("16_c7pb5")
 }, {
 "duration": 1.0,
-"texture": SubResource("11")
+"texture": ExtResource("17_xne5f")
 }, {
 "duration": 1.0,
-"texture": SubResource("12")
+"texture": ExtResource("18_4ileg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_bgwr3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_63rxf")
 }],
 "loop": true,
 "name": &"move",
-"speed": 5.0
+"speed": 8.0
 }]
 
-[sub_resource type="CircleShape2D" id="18"]
-radius = 4.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x774n"]
+radius = 5.0
+height = 22.0
 
 [sub_resource type="Animation" id="19"]
 tracks/0/type = "value"
@@ -323,13 +394,15 @@ hp = 4
 script = ExtResource("5")
 
 [node name="AnimatedSprite2D" parent="." index="1"]
+position = Vector2(5.96046e-08, -1.19209e-07)
+scale = Vector2(0.28, 0.28)
 sprite_frames = SubResource("17")
 animation = &"idle"
-frame = 5
+frame_progress = 0.632905
 
 [node name="CollisionShape2D" parent="." index="2"]
-position = Vector2(0, 3)
-shape = SubResource("18")
+position = Vector2(1, 0)
+shape = SubResource("CapsuleShape2D_x774n")
 
 [node name="AnimationPlayer" parent="." index="3"]
 libraries = {
@@ -341,7 +414,11 @@ libraries = {
 [node name="Sword" parent="Weapons" index="0" instance=ExtResource("6")]
 
 [node name="Camera2D" type="Camera2D" parent="." index="5"]
-zoom = Vector2(1.5, 1.5)
+zoom = Vector2(2, 2)
 
 [node name="DustPosition" type="Marker2D" parent="." index="6"]
 position = Vector2(0, 6)
+
+[node name="hit" type="AudioStreamPlayer" parent="." index="7"]
+stream = ExtResource("22_b6vl3")
+autoplay = true

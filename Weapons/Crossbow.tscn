@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://bwxfm550sp8u8"]
+[gd_scene load_steps=15 format=3 uid="uid://bwxfm550sp8u8"]
 
 [ext_resource type="PackedScene" uid="uid://jvc34qam0obx" path="res://Weapons/Weapon.tscn" id="1"]
 [ext_resource type="Script" path="res://Weapons/Crossbow.gd" id="2"]
-[ext_resource type="Texture2D" uid="uid://bn21fhm5o3tep" path="res://Art/Crossbow.png" id="3"]
 [ext_resource type="Shader" path="res://Characters/Player/White.gdshader" id="4"]
+[ext_resource type="Texture2D" uid="uid://ceqtc80rhs65y" path="res://Art/Gun Bubble 1.png" id="4_sl0gl"]
 [ext_resource type="Texture2D" uid="uid://c8n4t3xhxp8yj" path="res://Art/19+ icons/iceB.png" id="5"]
+[ext_resource type="AudioStream" uid="uid://dy04tupayb32h" path="res://Art/Sword.mp3" id="6_mjapx"]
 
 [sub_resource type="ShaderMaterial" id="2"]
 resource_local_to_scene = true
@@ -239,11 +240,21 @@ rotation_offset = 180
 
 [node name="Sprite2D" parent="Node2D" index="0"]
 material = SubResource("2")
-position = Vector2(0, -3)
-texture = ExtResource("3")
+position = Vector2(-1.99995, -14)
+rotation = 1.56869
+scale = Vector2(0.2, 0.189)
+texture = ExtResource("4_sl0gl")
+flip_h = true
+flip_v = true
+
+[node name="Hitbox" parent="Node2D/Sprite2D" index="0"]
+position = Vector2(24.9789, 10.6377)
+
+[node name="ChargeParticles" parent="Node2D/Sprite2D" index="1"]
+position = Vector2(24.9894, 5.3467)
 
 [node name="CollisionShape2D" parent="PlayerDetector" index="0"]
-position = Vector2(-9, -1)
+position = Vector2(0, 1)
 rotation = 1.5708
 shape = SubResource("1")
 
@@ -254,3 +265,6 @@ libraries = {
 
 [node name="AbilityIcon" parent="UI" index="0"]
 texture_under = ExtResource("5")
+
+[node name="hit" type="AudioStreamPlayer" parent="." index="5"]
+stream = ExtResource("6_mjapx")
